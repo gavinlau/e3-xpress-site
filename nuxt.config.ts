@@ -1,6 +1,5 @@
 import { pwa } from './config/pwa'
 import { appDescription } from './constants/index'
-
 export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
@@ -33,6 +32,7 @@ export default defineNuxtConfig({
       routes: ['/'],
       ignore: ['/hi'],
     },
+
   },
   app: {
     head: {
@@ -50,4 +50,38 @@ export default defineNuxtConfig({
     },
   },
   pwa,
+  build: {
+    transpile:
+      process.env.NODE_ENV === 'production'
+        ? [
+            'naive-ui',
+            'vueuc',
+            '@css-render/vue3-ssr',
+            '@juggle/resize-observer',
+          ]
+        : ['@juggle/resize-observer'],
+  },
+  vite: {
+    optimizeDeps: {
+      include:
+        process.env.NODE_ENV === 'development'
+          ? ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone']
+          : [],
+    },
+  },
+  imports: {
+    autoImport: true,
+    dirs: ['apis'],
+  },
+  runtimeConfig: {
+    apiSecret: '123',
+    public: {
+      baseURL: 'baseURL',
+    },
+  },
+  devServer: {
+    host: '192.168.0.103',
+    port: 3001,
+  },
+
 })

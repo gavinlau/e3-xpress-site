@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <main class=" bg-blue-600">
+  <main class="flex flex-col bg-blue-600">
     <!-- <div class="bg-green-300 w-full flex justify-center">
         <div class="bg-cyan-700 w-10/12 max-w-[1000px]">
           header
@@ -11,7 +11,7 @@
       </div> -->
     <Header />
     <div class="bg-red-400 w-full flex justify-center">
-      <div class="bg-cyan-100 w-full flex flex-col lg:w-8/12 min-h-screen">
+      <div class="bg-cyan-100 flex w-10/12 max-w-lg min-h-screen">
         <slot />
       </div>
     </div>

@@ -1,3 +1,6 @@
+http://demo.wpcom.cn/justnews/category/%e5%88%9b%e4%b8%9a%e5%88%86%e4%ba%ab
+https://699pic.com/
+  "animate.css": "^4.1.1",
 <p align="center">
 <img src="https://user-images.githubusercontent.com/11247099/140462375-7b7ac4db-35b7-453c-8a05-13d8d20282c4.png" width="600"/>
 </p>
